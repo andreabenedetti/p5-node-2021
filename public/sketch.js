@@ -1,7 +1,16 @@
+const clientSocket = io();
+
+clientSocket.on("connect", newConnection);
+
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
-  background(220);
+  background("pink");
+  circle(mouseX, mouseY, 50)
+}
+
+function newConnection() {
+  console.log(clientSocket.id)
 }
